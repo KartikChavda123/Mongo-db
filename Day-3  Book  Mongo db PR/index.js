@@ -2,6 +2,8 @@ const express = require("express");
 const port = 1800;
 const path = require("path");
 
+app.use(express.urlencoded())
+
 const app = express();
 
 const db = require("./config/db");
@@ -10,7 +12,6 @@ const schema = require("./model/firstSchema")
 app.set("view engine", "ejs");
 const fs = require("fs");
 
-app.use(express.urlencoded())
 
 app.use("/uploads",express.static(path.join(__dirname, 'uploads')));
 
@@ -26,10 +27,7 @@ const Storage = multer.diskStorage({
     },
 })
 
-const upload = multer({
-    storage: Storage
-}).single("image")
-
+const upload = multer({storage: Storage}).single("image")
 
 app.get("/", async (req, res) => {
     let data = await schema.find({});
