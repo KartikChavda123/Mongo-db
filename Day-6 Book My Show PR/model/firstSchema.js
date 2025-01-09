@@ -9,10 +9,6 @@ const schema = mongoose.Schema({
         type: String,
         required: true,
     },
-    directername: {
-        type: String,
-        required: true,
-    },
     catagory: {
         type: String,
         required: true,
