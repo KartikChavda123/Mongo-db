@@ -16,6 +16,6 @@ route.post("/addData", passport.checkAuth,upload, ctl.addData)
 route.get("/deleteAdmin",upload, ctl.deleteAdmin)
 route.get("/viewAdmin", passport.checkAuth,upload, ctl.viewAdmin)
 route.get("/editAdmin", passport.checkAuth,ctl.editAdmin)
-route.post("/updateData", passport.checkAuth,upload, ctl.updateData)
+route.post("/updateData",upload, ctl.updateData)
 
 module.exports = route;
