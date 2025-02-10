@@ -10,7 +10,7 @@ module.exports.login = async (req, res) => {
 }
 
 module.exports.logOut = async (req, res) => {
-    res.session.destroy();
+    req.session.destroy();
     res.redirect("/")
 }
 
@@ -21,6 +21,7 @@ module.exports.dashboard = (req, res) => {
 module.exports.addAdmin = (req, res) => {
     res.render("addAdmin");
 };
+
 module.exports.addData = async (req, res) => {
     req.body.image = req.file.path
     await schema.create(req.body)

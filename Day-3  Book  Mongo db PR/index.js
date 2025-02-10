@@ -1,22 +1,18 @@
 const express = require("express");
 const port = 1800;
 const path = require("path");
-
-app.use(express.urlencoded())
-
 const app = express();
-
+const fs = require("fs");
+const multer = require("multer");
 const db = require("./config/db");
 const schema = require("./model/firstSchema")
 
+
+app.use(express.urlencoded())
 app.set("view engine", "ejs");
-const fs = require("fs");
-
-
 app.use("/uploads",express.static(path.join(__dirname, 'uploads')));
 
 
-const multer = require("multer");
 
 const Storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -73,3 +69,7 @@ app.post("/updateData", upload,async (req, res) => {
 app.listen(port, (err) => {
     err ? console.log(err) : console.log("server start " + port);
 })
+
+
+
+
