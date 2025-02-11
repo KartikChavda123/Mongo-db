@@ -32,6 +32,7 @@ app.use(flashconnect.setflash);
 app.use("/", require("./route/route"));
 app.use("/category",require("./route/cateroute"));
 app.use("/subcategory", require("./route/subcatroute"));
+app.use("/product",require("./route/ProductRoute"));
 
 app.listen(port,(err)=> {
     err ? console.log(err) : console.log("server started on port :" + port);
