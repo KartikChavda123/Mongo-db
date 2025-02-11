@@ -1,9 +1,20 @@
 const schema = require("../model/firstSchema");
 
+module.exports.login = (req,res) => {
+    res.render("login")
+}
+
+module.exports.userLogin = async (req,res) => {
+    req.flash("success" , "login successfully !");
+    res.redirect("/dashboard")
+}
+
 module.exports.dashboard = async (req,res) => {
     res.render("dashboard");
 }
-
+module.exports.profile = (req, res) => {
+    res.render("profile");
+}
 module.exports.addadmin = (req,res) => {
     res.render("addadmin");
 }

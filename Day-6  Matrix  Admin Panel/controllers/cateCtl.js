@@ -13,7 +13,7 @@ module.exports.addCategory = async (req, res) => {
             res.redirect("/category/addCate")
         })
 }
-
+    
 module.exports.viewCat = async (req, res) => {
     await schema.find({})
         .then((data) => {

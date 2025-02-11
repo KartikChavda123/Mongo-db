@@ -8,7 +8,6 @@ const transport = nodemailer.createTransport
     },
 });
 
-
 module.exports.sendOtp = (to,Otp) => {
     let mailoptions = {
         from : "kartikchavda2005@gmail.com",
